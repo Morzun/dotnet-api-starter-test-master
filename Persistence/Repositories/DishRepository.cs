@@ -32,13 +32,7 @@ namespace dotnet_api_test.Persistence.Repositories
 
         public Dish GetDishById(int Id)
         {
-            var dish = _context.Dishes.Where(x => x.Id == Id).FirstOrDefault();
-
-            if (dish != null)
-            {
-                return dish;
-            }
-            return null;           
+            return _context.Dishes.Where(x => x.Id == Id).FirstOrDefault();
         }
 
         public void DeleteDishById(int Id)
